@@ -1,12 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Post } from '@nestjs/common';
+import { TwilioService } from './twilio.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly twilioService: TwilioService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('twilio-send')
+  sendMessageTwilio(): Promise<any> {
+    this.twilioService.sendMessageTwilio();
+    return 
   }
 }

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { TwilioService } from './app.service';
-require('dotenv').config()
+import { TwilioService } from './twilio.service';
+
 
 
 @Module({
